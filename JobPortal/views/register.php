@@ -11,7 +11,6 @@ error_reporting(E_ALL);
     <meta charset="UTF-8">
     <title>Register</title>
     <style>
-        /* General styles */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -25,7 +24,7 @@ error_reporting(E_ALL);
         }
 
         header {
-            background-color: #4CAF50; /* Green background */
+            background-color: #4CAF50;
             color: white;
             padding: 20px;
             text-align: center;
@@ -62,7 +61,7 @@ error_reporting(E_ALL);
             padding: 10px;
             margin: 10px 0;
             color: white;
-            background-color: #4CAF50; /* Green */
+            background-color: #4CAF50;
             border: none;
             border-radius: 5px;
             cursor: pointer;
@@ -70,7 +69,7 @@ error_reporting(E_ALL);
         }
 
         button:hover {
-            background-color: #45a049; /* Darker green */
+            background-color: #45a049; 
         }
 
         footer {
