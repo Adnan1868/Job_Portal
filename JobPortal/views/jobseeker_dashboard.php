@@ -2,7 +2,6 @@
 session_start();
 require '../models/database.php';
 
-// Debugging: Check if session variables are correctly set
 if (!isset($_SESSION['user_id']) || !isset($_SESSION['user_type'])) {
     echo "Session variables are not set!";
     exit();
@@ -13,7 +12,6 @@ if ($_SESSION['user_type'] != 'job_seeker') {
     exit();
 }
 
-// Fetch job applications for the logged-in job seeker
 $user_id = $_SESSION['user_id'];
 $stmt = $pdo->prepare("SELECT * FROM job_applications WHERE user_id = ?");
 $stmt->execute([$user_id]);
