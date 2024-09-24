@@ -8,6 +8,4 @@ function checkLogin() {
     }
 }
 
-// Call this function on pages where login is required
-// checkLogin();
 ?>
