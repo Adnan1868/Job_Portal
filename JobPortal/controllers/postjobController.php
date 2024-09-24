@@ -8,11 +8,10 @@ if (!isset($_SESSION['user_type']) || $_SESSION['user_type'] !== 'employer') {
 }
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    // Retrieve job details from the form
     $position_name = trim($_POST['position_name']);
     $salary = trim($_POST['salary']);
     $working_hours = trim($_POST['working_hours']);
-    $employer_id = $_SESSION['user_id']; // Assuming this is set during login
+    $employer_id = $_SESSION['user_id']; 
 
     if (empty($position_name) || empty($salary) || empty($working_hours)) {
         $_SESSION['error'] = "All fields are required.";
@@ -21,7 +20,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 
     try {
-        // Prepare and execute the insertion query
         $stmt = $pdo->prepare("INSERT INTO job_listings (employer_id, position_name, salary, working_hours) VALUES (?, ?, ?, ?)");
         $stmt->execute([$employer_id, $position_name, $salary, $working_hours]);
 
@@ -30,7 +28,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $_SESSION['error'] = "Failed to post job: " . $e->getMessage();
     }
 
-    // Redirect back to the post job page
     header('Location: ../views/postjob.php');
     exit();
 }
