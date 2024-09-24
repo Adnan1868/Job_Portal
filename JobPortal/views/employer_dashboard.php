@@ -7,7 +7,6 @@ if (!isset($_SESSION['user_type']) || $_SESSION['user_type'] != 'employer') {
     exit();
 }
 
-// Fetch job listings for the logged-in employer
 $stmt = $pdo->query("SELECT * FROM job_listings WHERE employer_id = " . $_SESSION['user_id']);
 $job_listings = $stmt->fetchAll();
 ?>
@@ -26,8 +25,8 @@ $job_listings = $stmt->fetchAll();
 
     <div class="sidebar">
         <a href="profile.php">Profile</a>
-        <a href="postjob.php">Post Job</a> <!-- Redirect to postjob.php -->
-        <a href="changepassword.php">Change Password</a> <!-- Change Password link -->
+        <a href="postjob.php">Post Job</a> 
+        <a href="changepassword.php">Change Password</a> 
     </div>
 
     <div class="content">
@@ -52,7 +51,7 @@ $job_listings = $stmt->fetchAll();
 
         <script>
             document.getElementById('viewApplications').addEventListener('click', function() {
-                fetch('../controllers/getApplications.php?job_id=1') // Replace 1 with the actual job ID
+                fetch('../controllers/getApplications.php?job_id=1') 
                     .then(response => response.json())
                     .then(data => {
                         let output = '<h2>Job Applications</h2><ul>';
