@@ -11,7 +11,7 @@ error_reporting(E_ALL);
     <meta charset="UTF-8">
     <title>Login - Job Application Portal</title>
     <style>
-        /* General styles */
+     
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -25,14 +25,14 @@ error_reporting(E_ALL);
         }
 
         header {
-            background-color: #4CAF50; /* Green background */
+            background-color: #4CAF50; 
             color: white;
             padding: 20px;
             text-align: center;
         }
 
         .container {
-            max-width: 400px; /* Consistent width */
+            max-width: 400px; 
             margin: 20px auto;
             padding: 20px;
             background: white;
@@ -54,14 +54,14 @@ error_reporting(E_ALL);
         }
 
         button {
-            background: #4CAF50; /* Green */
+            background: #4CAF50; 
             color: #ffffff;
             border: none;
             cursor: pointer;
         }
 
         button:hover {
-            background: #45a049; /* Darker green */
+            background: #45a049; 
         }
 
         footer {
