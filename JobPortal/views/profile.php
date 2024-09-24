@@ -7,21 +7,17 @@ if (!isset($_SESSION['user_id'])) {
     exit();
 }
 
-// Fetch user data from the database
 $user_id = $_SESSION['user_id'];
 $stmt = $pdo->prepare("SELECT full_name, email, gender, contact_number, user_type FROM users WHERE id = ?");
 $stmt->execute([$user_id]);
 $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    // Update user's full name and contact number
     $full_name = $_POST['full_name'];
     $contact_number = $_POST['contact_number'];
 
     $updateStmt = $pdo->prepare("UPDATE users SET full_name = ?, contact_number = ? WHERE id = ?");
     $updateStmt->execute([$full_name, $contact_number, $user_id]);
-
-    // Refresh the user data after update
     $stmt->execute([$user_id]);
     $user = $stmt->fetch(PDO::FETCH_ASSOC);
     $_SESSION['success'] = "Profile updated successfully!";
@@ -73,7 +69,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             padding: 10px;
             margin: 10px 0;
             color: white;
-            background-color: #4CAF50; /* Green */
+            background-color: #4CAF50;
             border: none;
             border-radius: 5px;
             cursor: pointer;
@@ -81,7 +77,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
 
         button:hover {
-            background-color: #45a049; /* Darker green */
+            background-color: #45a049; 
         }
 
         footer {
