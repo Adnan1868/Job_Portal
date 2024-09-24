@@ -3,13 +3,12 @@ session_start();
 require '../models/database.php';
 require '../controllers/applyforjobsController.php';
 
-// Check if the user is logged in and is a job seeker
 if (!isset($_SESSION['user_type']) || $_SESSION['user_type'] != 'job_seeker') {
     header('Location: login.php');
     exit();
 }
 ?>
-
+    
 <!DOCTYPE html>
 <html lang="en">
 <head>
