@@ -2,19 +2,16 @@
 session_start();
 require '../models/database.php';
 
-// Check if the user is logged in as an employer
+
 if (!isset($_SESSION['user_type']) || $_SESSION['user_type'] != 'employer') {
     header('Location: login.php');
     exit();
 }
-
-// Initialize message variable
 $message = '';
 
-// Check for any session messages from the controller
 if (isset($_SESSION['message'])) {
     $message = $_SESSION['message'];
-    unset($_SESSION['message']); // Clear the message after displaying it
+    unset($_SESSION['message']); 
 }
 ?>
 
@@ -46,7 +43,7 @@ if (isset($_SESSION['message'])) {
             margin: 10px 0;
         }
         .btn {
-            background-color: #4CAF50; /* Green */
+            background-color: #4CAF50;
             color: white;
             padding: 10px;
             border: none;
@@ -55,7 +52,7 @@ if (isset($_SESSION['message'])) {
             width: 100%;
         }
         .btn:hover {
-            background-color: #45a049; /* Darker green */
+            background-color: #45a049; 
         }
         .message {
             color: green;
